@@ -101,20 +101,20 @@ const PaymentForm = () => {
                     <br />
                     <h3 className="text-xl font-semibold">Contact Us:</h3>
                     <p className="flex items-center gap-x-1"><FaRegEnvelope></FaRegEnvelope> ravinder@writo.in</p>
-                    <p className="flex items-center gap-x-1"><FaPhoneAlt />+9518889372</p>
-                    <p className="flex items-center gap-x-1"><FaWhatsapp />+8059458609</p>
+                    <p className="flex items-center gap-x-1"><FaPhoneAlt />+91 9518889372</p>
+                    <p className="flex items-center gap-x-1"><FaWhatsapp />+91 8059458609</p>
                     <br />
 
                     <h1 className="text-xl font-semibold">Terms & Conditions:</h1>
-                    <p>Course fee once Paid is not refundable for more details visit <a className="text-blue-500" href=""></a></p>
-                    <p className="mt-4">You agree to share information entered on this page with Pregrad (owner of this page) and Razorpay, adhering to applicable laws.</p>
+                    <p>Course fee once Paid is not refundable for more details visit :<a className="text-blue-500" href=""></a></p>
+                    <a className="hover:underline text-blue-500 flex flex-col mt-4" href="https://merchant.razorpay.com/policy/MNwUQ1almK30Uz/refund">Refund policy</a>
+                    <p className="mt-4">You agree to share information entered on this page with Writo Education (owner of this page) and Razorpay, adhering to applicable laws.</p>
 
                     <hr className="mt-8 h-2" />
 
                     <div className="flex flex-col mt-4 text-blue-500">
                         <a className="hover:underline" href="https://merchant.razorpay.com/policy/MNwUQ1almK30Uz/terms">Terms and conditions</a>
                         <a className="hover:underline" href="https://merchant.razorpay.com/policy/MNwUQ1almK30Uz/privacy">Add Privacy and policies</a>
-                        <a className="hover:underline" href="https://merchant.razorpay.com/policy/MNwUQ1almK30Uz/refund">Refund policies</a>
                         <a className="hover:underline" href="https://merchant.razorpay.com/policy/MNwUQ1almK30Uz/shipping">Shipping and delivery</a>
                     </div>
 
@@ -131,9 +131,21 @@ const PaymentForm = () => {
                     <div className="p-8">
                         <h3 className="text-2xl font-semibold">Payment Details</h3>
                         <hr className="bg-green-500 w-10 h-2 mt-8" /> <br />
+
                         <div className="md:flex items-center justify-between">
                             <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Student Name</h4>
-                            <input className="appearance-none bg-transparent text-black border border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight  outline-green-400" id="text" type="text" required />
+                            <input
+                                className="appearance-none bg-transparent text-black border border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight outline-green-400"
+                                id="text"
+                                type="text"
+                                onKeyDown={(e) => {
+                                const allowedKeys = /[A-Za-z\s]/;
+                                if (!allowedKeys.test(e.key)) {
+                                    e.preventDefault();
+                                }
+                                }}
+                                required
+                            />
                         </div>
 
                         <div className="md:flex items-center justify-between mt-6">
@@ -142,21 +154,38 @@ const PaymentForm = () => {
                         </div>
 
                         <div className="md:flex items-center justify-between mt-6">
-                            <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Number</h4>
-                            <input className="appearance-none border bg-transparent text-black border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight  outline-green-400" id="number" type="number" required/>
-                        </div>
+                            <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Phone Number</h4>
+                            <input
+                                className="appearance-none border bg-transparent text-black border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight outline-green-400"
+                                id="number"
+                                type="number"
+                                required
+                                style={{ WebkitAppearance: 'none', MozAppearance: 'textfield' }}
+                            />
+                            </div>
+
+                            <style>
+                            {`
+                                input[type="number"]::-webkit-inner-spin-button,
+                                input[type="number"]::-webkit-outer-spin-button {
+                                -webkit-appearance: none;
+                                appearance: none;
+                                margin: 0;
+                                }
+                            `}
+                            </style>
+
 
                         <div className="md:flex items-center justify-between mt-6">
                             <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Live Program Selected</h4>
-                            <select className="select border bg-transparent text-black rounded-none border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2" required>
-                                <option selected>--Select--</option>
-                                <option>Analytics & Data Science</option>
-                                <option>Data Structure & Algorithm</option>
-                                <option>Python Development</option>
-                                <option>Android Development</option>
-                                <option>MERN stack Development</option>
-                                <option>Android App Development</option>
-                                <option>Machine Learning</option>
+                            <select defaultValue="" className="select border bg-transparent text-black rounded-none border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2" required>
+                            <option value="" disabled>--Select--</option>
+                            <option value="Data Analytics">Data Analytics</option>
+                            <option value="Data Structure & Algorithm">Data Structure & Algorithm</option>
+                            <option value="Python Development">Python Development</option>
+                            <option value="Android Development">Android Development</option>
+                            <option value="MERN stack Development">MERN Stack Development</option>
+                            <option value="Machine Learning">Machine Learning</option>
                             </select>
                         </div>
 
@@ -181,10 +210,11 @@ const PaymentForm = () => {
                             <img className="h-6 w-12" src="https://i.ibb.co/7GX248v/download-7.png" alt="" />
 
                         </div>
+
                         <div className="h-15">
-                            
                             <button className="md:ms-2 bg-[#05ad11] p-5 text-white font-bold w-full md:w-48" ><input type="submit" value="Pay ₹" /> {totalPlay}</button>
                         </div>
+
                     </div>
 
                 </form>
@@ -214,6 +244,7 @@ const PaymentForm = () => {
                         </div>
                     </form>
                 </dialog>
+
             </div>
         </div>
     );
