@@ -8,7 +8,7 @@ import Skilled from './pages/hireFromUs/components/Skilled'
 import OtherCourse from './pages/othersCourse/OtherCourse';
 import Mentorship from './pages/mentorship/Mentorship';
 import RoadMap from './pages/mentorship/components/roadmap/RoadMap';
-import NavBar from './pages/navBar/Navbar';
+// import NavBar from './pages/navBar/Navbar';
 
 const App = () => {
   return (
