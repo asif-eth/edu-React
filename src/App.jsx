@@ -6,9 +6,9 @@ import Hire from './pages/hire/components/Hire'
 import HireFromUs from './pages/hireFromUs/HireFromUs';
 import Skilled from './pages/hireFromUs/components/Skilled'
 import OtherCourse from './pages/othersCourse/OtherCourse';
-import Navbar from './pages/navBar/Navbar';
 import Mentorship from './pages/mentorship/Mentorship';
 import RoadMap from './pages/mentorship/components/roadmap/RoadMap';
+import NavBar from './pages/navBar/Navbar';
 
 const App = () => {
   return (
