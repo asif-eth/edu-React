@@ -1,12 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from '../pages/footer/Footer';
-import NavBar from '../pages/navBar/Navbar';
+import Navbar from "../pages/Navbar/Navbar"
 
 const Prime = () => {
     return (
         <div>
-            <NavBar></NavBar>
+            <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
