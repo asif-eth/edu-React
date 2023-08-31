@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Prime from "../../layout/Prime";
 import Home from "../../pages/home/Home";
 
 // Courses
@@ -23,7 +24,6 @@ import HireFromUs from '../../pages/hireFromUs/HireFromUs'
 
 import Mentorship from "../../pages/mentorship/Mentorship";
 import Entrepreneurship from '../../pages/entrepreneurship/Entrepreneurship'
-import Prime from "../../layout/Prime";
 
 const router = createBrowserRouter([
     {
