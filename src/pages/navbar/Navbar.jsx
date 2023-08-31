@@ -9,7 +9,7 @@ import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/navbar/logo.svg'
 
-const NavBar = () => {
+const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const [largeToggle, setLargeToggle] = useState(false)
 
@@ -430,4 +430,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default Navbar;
