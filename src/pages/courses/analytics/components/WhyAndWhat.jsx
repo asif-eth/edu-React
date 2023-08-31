@@ -12,7 +12,7 @@ const WhyAndWhat = () => {
                                                 <h1 className="text-3xl md:text-5xl font-bold">Why <span className='text-pink'>learn</span> Data Science?</h1>
                                                 <br />
 
-                                                <div className='pl-10 md:pl-0'>
+                                                <div className='pl-1 md:pl-0'>
                                                         <div className='flex gap-x-3'>
                                                                 <div>
                                                                         <BsShieldCheck className="bg-[#ee4962] text-white p-[8px] md:p-[10px] rounded-2xl w-[35px] h-[35px] md:w-[40px] md:h-[40px]"></BsShieldCheck>
