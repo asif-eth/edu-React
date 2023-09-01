@@ -81,7 +81,7 @@ const PaymentForm = () => {
         event.preventDefault();
         console.log('Form submitted');
 
-        // onClickStart()
+        onClickStart()
     }
 
     return (
@@ -225,7 +225,7 @@ const PaymentForm = () => {
 
                 </form>
 
-                {/* <dialog id="my_modal_3" className="modal">
+                <dialog id="my_modal_3" className="modal">
                     <form method="dialog" className="modal-box">
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                         <div className="flex flex-col md:flex-row h-[80vh] md:h-[250px] items-center gap-4">
@@ -249,7 +249,7 @@ const PaymentForm = () => {
                             </div>
                         </div>
                     </form>
-                </dialog> */}
+                </dialog>
 
             </div>
         </div>
