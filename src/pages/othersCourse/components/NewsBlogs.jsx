@@ -4,26 +4,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
 
 import { FaFolder } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import SwiperCore from "swiper/core"
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
+SwiperCore.use([Pagination, Autoplay, Navigation]);
 
 const NewsBlogs = () => {
     return (
-        <div className='mb-10'>
+        <div className='mb-10 relative'>
             <Swiper
+           
                 slidesPerView={1}
                 spaceBetween={30}
                 pagination={{
                     clickable: true,
                 }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                navigation={true}
-                modules={[Pagination, Navigation, Autoplay]}
+               
+                  navigation={{
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }}
+              
                 className="otherCoursesSwiper"
                 breakpoints={{
                     768: {
@@ -201,6 +206,8 @@ const NewsBlogs = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
+            <div className="swiper-button-next "></div>
+            <div className="swiper-button-prev "></div>
         </div>
     );
 };

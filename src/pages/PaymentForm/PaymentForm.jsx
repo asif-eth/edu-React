@@ -77,8 +77,9 @@ const PaymentForm = () => {
     }, [])
 
 
-    const handleSubmitForm = (event) => {
+    const handleSubmitForm = async (event) => {
         event.preventDefault();
+        console.log('Form submitted');
 
         onClickStart()
     }
@@ -127,14 +128,15 @@ const PaymentForm = () => {
                     </div> */}
                 </div>
 
-                <form onSubmit={handleSubmitForm} className="card lg:ms-8 mx-2 w-full md:mx-0 lg:w-5/12 shadow-2xl bg-white">
+                <form action="https://formspree.io/f/mnqkvjra" method="POST" onSubmit={handleSubmitForm} className="card lg:ms-8 mx-2 w-full md:mx-0 lg:w-5/12 shadow-2xl bg-white">
                     <div className="p-8">
                         <h3 className="text-2xl font-semibold">Payment Details</h3>
                         <hr className="bg-green-500 w-10 h-2 mt-8" /> <br />
 
                         <div className="md:flex items-center justify-between">
-                            <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Student Name</h4>
+                            <label className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Student Name</label>
                             <input
+                                name="Student Name"
                                 className="appearance-none bg-transparent text-black border border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight outline-green-400"
                                 id="text"
                                 type="text"
@@ -150,12 +152,13 @@ const PaymentForm = () => {
 
                         <div className="md:flex items-center justify-between mt-6">
                             <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Email</h4>
-                            <input className="appearance-none border bg-transparent text-black border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight  outline-green-400" id="email" type="email" required />
+                            <input name="Email" className="appearance-none border bg-transparent text-black border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight  outline-green-400" id="email" type="email" required />
                         </div>
 
                         <div className="md:flex items-center justify-between mt-6">
                             <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Phone Number</h4>
                             <input
+                                name="Phone Number"
                                 className="appearance-none border bg-transparent text-black border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2 leading-tight outline-green-400"
                                 id="number"
                                 type="number"
@@ -178,14 +181,14 @@ const PaymentForm = () => {
 
                         <div className="md:flex items-center justify-between mt-6">
                             <h4 className="md:text-[16px] mb-2 md:mb-0 text-[14px]">Live Program Selected</h4>
-                            <select defaultValue="" className="select border bg-transparent text-black rounded-none border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2" required>
-                            <option value="" disabled>--Select--</option>
-                            <option value="Data Analytics">Data Analytics</option>
-                            <option value="Data Structure & Algorithm">Data Structure & Algorithm</option>
-                            <option value="Python Development">Python Development</option>
-                            <option value="Android Development">Android Development</option>
-                            <option value="MERN stack Development">MERN Stack Development</option>
-                            <option value="Machine Learning">Machine Learning</option>
+                            <select name="live_program" defaultValue="" className="select border bg-transparent text-black rounded-none border-[#e2e2e2] w-full md:ms-4 md:w-72 py-2" required>
+                                <option value="" disabled>--Select--</option>
+                                <option value="Data Analytics">Data Analytics</option>
+                                <option value="Data Structure & Algorithm">Data Structure & Algorithm</option>
+                                <option value="Python Development">Python Development</option>
+                                <option value="Android Development">Android Development</option>
+                                <option value="MERN stack Development">MERN Stack Development</option>
+                                <option value="Machine Learning">Machine Learning</option>
                             </select>
                         </div>
 
@@ -212,8 +215,11 @@ const PaymentForm = () => {
                         </div>
 
                         <div className="h-15">
-                            <button className="md:ms-2 bg-[#05ad11] p-5 text-white font-bold w-full md:w-48" ><input type="submit" value="Pay ₹" /> {totalPlay}</button>
+                            <button type="submit" className="md:ms-2 bg-[#05ad11] p-5 text-white font-bold w-full md:w-48">
+                                Pay ₹ {totalPlay}
+                            </button>
                         </div>
+
 
                     </div>
 
