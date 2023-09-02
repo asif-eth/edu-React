@@ -128,7 +128,7 @@ const PaymentForm = () => {
                     </div> */}
                 </div>
 
-                <form action="https://formspree.io/f/mnqkvjra" method="POST" onSubmit={handleSubmitForm} className="card lg:ms-8 mx-2 w-full md:mx-0 lg:w-5/12 shadow-2xl bg-white">
+                <form action="https://formspree.io/f/mnqkvjra" method="POST" className="card lg:ms-8 mx-2 w-full md:mx-0 lg:w-5/12 shadow-2xl bg-white">
                     <div className="p-8">
                         <h3 className="text-2xl font-semibold">Payment Details</h3>
                         <hr className="bg-green-500 w-10 h-2 mt-8" /> <br />
